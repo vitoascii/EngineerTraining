@@ -26,11 +26,10 @@ function isIdCardCorrect(number){
 	return pattern.test(number);
 }
 
-function logup(){
+function submit(){
 	
 	var form=document.getElementById("customer");
 	var name=form.elements["name"];
-	var type=form.elements["type"];
 	var phone=form.elements["phone"];
 	var address=form.elements["address"];
 	var postnum=form.elements["postnum"];
@@ -79,33 +78,6 @@ function logup(){
 		return;
 	}
 
-
-	if(type.value==0){
-		var homephone=form.elements["homephone"];
-		if(!isHomePhoneCorrect(homephone.value)){
-			alert("座机输入错误");
-			return;
-		}
-		
-	}
-	if(type.value==1){
-		var company=form.elements["company"];
-		if(isStrigTooShort(company.value)){
-			alert("单位名字过短");
-			return;
-		}
-
-	}
-	if(type.value==2){
-		var linkman=form.elements["linkman"];
-		if(isStrigTooShort(linkman.value)){
-			alert("联系人姓名过短");
-			return;
-		}
-	}
-
-
-	alert("注册成功！");
+	alert("更新成功！");
 	form.submit();
-	return;
  } 

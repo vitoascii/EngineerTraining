@@ -1,26 +1,32 @@
-
-
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@page import="com.sun.org.apache.bcel.internal.generic.*"%>
+<%@page import="pd.Customer"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<jsp:useBean id="customer" scope="request" type="pd.Customer" />
 <html>
 <head>
-<script type="text/javascript" src="../js/logup_customer.js"></script> 
-<script type="text/javascript">
-	function onSubmitClick(){
-		login();
-	}
-</script>
-
-<title>用户注册</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="../js/update_customer.js"></script> 
+<title>用户信息</title>
 </head>
 <body>
 
 <div align="center">
-  <h1>用户注册</h>
+  <h1>修改信息</h>
   <hr />
 </div>
 
 <div align="center">
-  <form id="customer" method="post" action="../../test.html" >
+  <form id="customer" method="post" action="/EquipManager/servlet/CustomerInfoUpdateServlet" >
   <table>
+  <tr>
+    <input type="hidden" name="id" value=<%= customer.getId() %>>
+    <input type="hidden" name="type" value=<%= customer.getType() %>>
+  	<input type="hidden" name="password" value=<%= customer.getPassword() %>>
+  </tr>
 
   <tr>
   <td align="right">姓名：</td>
@@ -29,19 +35,12 @@
 
   <tr>
   <td align="right">设置密码：</td>
-  <td colspan="3"><input type="text" name="password"></td>
+  <td colspan="3"><input type="text" name="password2"></td>
   </tr>
 
   <tr>
   <td align="left">客户性质：</td>
-  <td colspan="1">
-  <select name="type">
-  <option value="0">家庭用户</option>
-  <option value="1">单位用户</option>
-  <option value="2">代理商</option>
-  <option value="3">签约用户</option>
-  </select>
-  </td>
+  <td><%= customer.getTypeName() %></td>
   </tr>
 
   <tr>
@@ -70,24 +69,25 @@
   </tr>
 
   <tr>
-  <td align="right">座机：</td>
-  <td colspan="3"><input type="text" name="homephone"></td>
-  <td align="left" colspan="2">(家庭用户需填)</td>
+  <td align="right"><%= customer.getExtraInfoName() %></td>
+  <td colspan="3"><input type="text" name="extrainfo"></td>
   </tr>
-
+  
   <tr>
-  <td align="right" colspan="4">
-  	<input type="button" value="确定" onclick="onSubmitClick()">
-  	</td>
-  <td align="right" colspan="4">
-    <input type="button" value="取消" onclick="onSubmitClick()">
-    </td>
-
+  <td colspan="4" align="center">
+  <button onclick="submit()">确定</button>
+  </td>  
   </tr>
-
   </table>
   </form>
 </div>
+<div align="center">
+  <form action="/EquipManager/servlet/CustomerLoginServlet">
+  	<input type="submit" value="取消">
+  	<input type="hidden" name="id" value=<%= customer.getId() %>>
+  	<input type="hidden" name="password" value=<%= customer.getPassword() %>>
+  </form>
+</div> 
 
 </body>
 </html>

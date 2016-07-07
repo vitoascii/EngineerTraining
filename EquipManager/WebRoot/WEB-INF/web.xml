@@ -1,17 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>EquipManager</display-name>
-  <servlet>
-    <description>JAX-RS Tools Generated - Do not modify</description>
-    <servlet-name>JAX-RS Servlet</servlet-name>
-    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
   <welcome-file-list>
         <welcome-file>/home_page.html</welcome-file>
     </welcome-file-list>
-  <servlet-mapping>
-    <servlet-name>JAX-RS Servlet</servlet-name>
-    <url-pattern>/jaxrs/*</url-pattern>
-  </servlet-mapping>
+    
+    
+<!-- 1      CustomerLoginServlet===================================== -->  
+<servlet>
+    <display-name>CustomerLoginServlet</display-name>
+    <servlet-name>CustomerLoginServlet</servlet-name>
+    <servlet-class>myservlet.CustomerLoginServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>CustomerLoginServlet</servlet-name>
+    <url-pattern>/servlet/CustomerLoginServlet</url-pattern>
+ </servlet-mapping>
+<!-- 2      CustomerLogupServlet===================================== --> 
+ <servlet>
+    <display-name>CustomerLogupServlet</display-name>
+    <servlet-name>CustomerLogupServlet</servlet-name>
+    <servlet-class>myservlet.CustomerLogupServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>CustomerLogupServlet</servlet-name>
+    <url-pattern>/servlet/CustomerLogupServlet</url-pattern>
+ </servlet-mapping>
+<!-- 3      CustomerLogupPreServlet===================================== -->
+ <servlet>
+    <display-name>CustomerLogupPreServlet</display-name>
+    <servlet-name>CustomerLogupPreServlet</servlet-name>
+    <servlet-class>myservlet.CustomerLogupPreServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>CustomerLogupPreServlet</servlet-name>
+    <url-pattern>/servlet/CustomerLogupPreServlet</url-pattern>
+ </servlet-mapping>
+<!-- 4      CustomerInfoUpdatePreServlet===================================== -->  
+ <servlet>
+    <display-name>CustomerInfoUpdatePreServlet</display-name>
+    <servlet-name>CustomerInfoUpdatePreServlet</servlet-name>
+    <servlet-class>myservlet.CustomerInfoUpdatePreServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>CustomerInfoUpdatePreServlet</servlet-name>
+    <url-pattern>/servlet/CustomerInfoUpdatePreServlet</url-pattern>
+ </servlet-mapping>
+<!-- 5      CustomerInfoUpdateServlet===================================== --> 
+ <servlet>
+    <display-name>CustomerInfoUpdateServlet</display-name>
+    <servlet-name>CustomerInfoUpdateServlet</servlet-name>
+    <servlet-class>myservlet.CustomerInfoUpdateServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>CustomerInfoUpdateServlet</servlet-name>
+    <url-pattern>/servlet/CustomerInfoUpdateServlet</url-pattern>
+ </servlet-mapping>
+<!-- 6     RepairRegisterPreServlet===================================== --> 
+ <servlet>
+    <display-name>RepairRegisterPreServlet</display-name>
+    <servlet-name>RepairRegisterPreServlet</servlet-name>
+    <servlet-class>myservlet.RepairRegisterPreServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>RepairRegisterPreServlet</servlet-name>
+    <url-pattern>/servlet/RepairRegisterPreServlet</url-pattern>
+ </servlet-mapping>
+<!-- 7      RepairRegisterServlet===================================== --> 
+ <servlet>
+    <display-name>RepairRegisterServlet</display-name>
+    <servlet-name>RepairRegisterServlet</servlet-name>
+    <servlet-class>myservlet.RepairRegisterServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>RepairRegisterServlet</servlet-name>
+    <url-pattern>/servlet/RepairRegisterServlet</url-pattern>
+ </servlet-mapping>
+<!-- 8      EngineerLoginServlet===================================== --> 
+<servlet>
+    <display-name>EngineerLoginServlet</display-name>
+    <servlet-name>EngineerLoginServlet</servlet-name>
+    <servlet-class>myservlet.EngineerLoginServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>EngineerLoginServlet</servlet-name>
+    <url-pattern>/servlet/EngineerLoginServlet</url-pattern>
+ </servlet-mapping>
+<!-- 9      RepairServlet===================================== --> 
+<servlet>
+    <display-name>RepairServlet</display-name>
+    <servlet-name>RepairServlet</servlet-name>
+    <servlet-class>myservlet.RepairServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>RepairServlet</servlet-name>
+    <url-pattern>/servlet/RepairServlet</url-pattern>
+ </servlet-mapping>
+<!-- 10      ManagerLoginServlet===================================== --> 
+<servlet>
+    <display-name>ManagerLoginServlet</display-name>
+    <servlet-name>ManagerLoginServlet</servlet-name>
+    <servlet-class>myservlet.ManagerLoginServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>ManagerLoginServlet</servlet-name>
+    <url-pattern>/servlet/ManagerLoginServlet</url-pattern>
+ </servlet-mapping>
+<!-- 11      CustomerLoginServlet===================================== --> 
+<servlet>
+    <display-name>StorageServlet</display-name>
+    <servlet-name>StorageServlet</servlet-name>
+    <servlet-class>myservlet.StorageServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>StorageServlet</servlet-name>
+    <url-pattern>/servlet/StorageServlet</url-pattern>
+ </servlet-mapping>
+<!-- 11      CustomerLoginServlet===================================== --> 
 </web-app>
